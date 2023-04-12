@@ -1,0 +1,14 @@
+name: intel
+
+on: [push]
+
+jobs:
+  test_onedpl_sort:
+    name: Test oneDPL sort
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - name: Dependencies
+      run: .github/workflows/install_oneapi.sh
+    - name: Compile
+      run: make
