@@ -11,4 +11,8 @@ jobs:
     - name: Dependencies
       run: .github/workflows/install_oneapi.sh
     - name: Compile
-      run: make
+      run: |
+        set +e
+        source /opt/intel/oneapi/setvars.sh
+        set -e
+        make
